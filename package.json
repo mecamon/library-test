@@ -1,0 +1,25 @@
+{
+  "name": "hooks-library",
+  "version": "1.0.0",
+  "description": "Unphusist hooks library. Compatible with the OLD modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "unphusist",
+    "hooks",
+    "react"
+  ],
+  "author": "Carlos Mejía",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@testing-library/react": "12.1.5",
+    "@types/react": "^16.8.8",
+    "typescript": "^3.0"
+  }
+}
