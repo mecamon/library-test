@@ -1,5 +1,5 @@
 {
-  "name": "hooks-library",
+  "name": "hooks-library-unphusist",
   "version": "1.0.0",
   "description": "Unphusist hooks library. Compatible with the OLD modules",
   "main": "./dist/cjs/index.js",
@@ -12,7 +12,9 @@
     "test": "jest --config jestconfig.json",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "lint:fix": "eslint --fix \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run prettier && npm run lint"
   },
   "keywords": [
     "unphusist",
@@ -32,7 +34,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/mecamon/library-test"
   },
   "devDependencies": {
     "@testing-library/react": "12.1.5",
