@@ -4,13 +4,19 @@
   "description": "Unphusist hooks library. Compatible with the OLD modules",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "jest --config jestconfig.json"
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "test": "jest --config jestconfig.json",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "lint:fix": "eslint --fix \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
   },
   "keywords": [
     "unphusist",
     "hooks",
-    "react"
+    "react",
+    "typescript"
   ],
   "author": "Carlos Mejía",
   "license": "ISC",
@@ -18,13 +24,28 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
+  "peerDependencies": {
+    "react": "^16.8.8"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "devDependencies": {
     "@testing-library/react": "12.1.5",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.8",
+    "@typescript-eslint/eslint-plugin": "2.31.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^5.0.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.12.4",
     "jest": "^24.0.11",
     "jest-canvas-mock": "1.1.0",
     "jest-environment-jsdom": "24.0.0",
+    "prettier": "2.0.5",
     "ts-jest": "24.0.1",
     "tslib": "1.10.0",
     "typescript": "^3.0"
